@@ -1,0 +1,41 @@
+.user-detail-header {
+    min-height: fit-content;
+    background-color: #A0A9DE;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+
+    img {
+        height: 80px;
+        width: 80px;
+        object-fit: contain;
+        border-radius: 12px;
+        border: solid 3px #3F51B5;
+    }
+}
+
+.user-details {
+    height: 100px;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+mat-card-title {
+    padding: 16px;
+}
+
+.pin-right-upper-corner {
+    position: absolute;
+    right: 0;
+    top: 0;
+}

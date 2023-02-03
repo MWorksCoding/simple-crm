@@ -1,0 +1,83 @@
+<h1>Our Dashboard</h1>
+<mat-grid-list cols="2" rowHeight="2:1.5">
+    <mat-grid-tile>
+        <section class="example-section">
+            <span class="example-list-section">
+              <mat-checkbox class="example-margin"
+                            [checked]="allComplete"
+                            [color]="task.color"
+                            [indeterminate]="someComplete()"
+                            (change)="setAll($event.checked)">
+                {{task.name}}
+              </mat-checkbox>
+            </span>
+            <span class="example-list-section">
+              <ul>
+                <li *ngFor="let subtask of task.subtasks">
+                  <mat-checkbox [(ngModel)]="subtask.completed"
+                                [color]="subtask.color"
+                                (ngModelChange)="updateAllComplete()">
+                    {{subtask.name}}
+                  </mat-checkbox>
+                </li>
+              </ul>
+            </span>
+          </section>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-chip-listbox aria-label="Fish selection">
+            <mat-chip-option>One fish</mat-chip-option>
+            <mat-chip-option>Two fish</mat-chip-option>
+            <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+            <mat-chip-option color="warn">Warn fish</mat-chip-option>
+          </mat-chip-listbox>
+    </mat-grid-tile>
+    <mat-grid-tile><mat-card class="example-card">
+        <mat-card-content>
+          <h2 class="example-h2">Progress spinner configuration</h2>
+      
+          <section class="example-section">
+            <label class="example-margin">Color:</label>
+            <mat-radio-group [(ngModel)]="color">
+              <mat-radio-button class="example-margin" value="primary">
+                Primary
+              </mat-radio-button>
+              <mat-radio-button class="example-margin" value="accent">
+                Accent
+              </mat-radio-button>
+              <mat-radio-button class="example-margin" value="warn">
+                Warn
+              </mat-radio-button>
+            </mat-radio-group>
+          </section>
+          <section class="example-section">
+            <label class="example-margin">Mode:</label>
+            <mat-radio-group [(ngModel)]="mode">
+                <mat-radio-button class="example-margin" value="indeterminate">
+                    Indeterminate
+                  </mat-radio-button>
+              <mat-radio-button class="example-margin" value="determinate">
+                Determinate
+              </mat-radio-button>
+            </mat-radio-group>
+          </section>
+          <section class="example-section" *ngIf="mode === 'determinate'">
+            <label class="example-margin">Progress:</label>
+            <mat-slider class="example-margin">
+              <input type="range" [(ngModel)]="value" matSliderThumb>
+            </mat-slider>
+          </section>
+        </mat-card-content>
+      </mat-card></mat-grid-tile>
+    <mat-grid-tile><mat-card class="example-card">
+  <mat-card-content>
+    <h2 class="example-h2">Result</h2>
+    <mat-progress-spinner
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="value">
+    </mat-progress-spinner>
+  </mat-card-content>
+</mat-card></mat-grid-tile>
+  </mat-grid-list>

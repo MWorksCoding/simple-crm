@@ -1,0 +1,66 @@
+.mat-drawer-container {
+    height: 100vh;
+}
+
+.menu-icon {
+    cursor: pointer;
+}
+
+.sidenav{
+    width: 300px;
+}
+
+.logo-container {
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.04);
+    padding: 0 16px 0 16px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    background-color: #3F51B5;
+}
+
+mat-toolbar, mat-toolbar-row {
+    min-height: 56px;
+    height: 57px;
+    span {
+        padding-left: 16px;
+    }
+}
+
+.menu-items {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    li {
+        padding-left: 16px;
+        padding-right: 16px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    
+        &:focus {
+            outline: none;
+        }
+
+        mat-icon {
+            margin-right: 16px;
+        }
+
+        &:hover {
+            background-color: rgba($color: #000000, $alpha: 0.04)
+        }
+    }
+}
+
+.router-container {
+    padding-left: 56px;
+    padding-right: 56px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.logo {
+    max-width: 100%;
+    height: 36px;
+}

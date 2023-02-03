@@ -1,0 +1,21 @@
+<mat-card>
+    <table class="user-table">
+        <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>City</th>
+        </tr>
+
+        <tr *ngFor="let user of allUsers" routerLink="{{user['customIdName']}}"> 
+            <!-- let user of allUsers: alle users aus dem Array allUser; users ist jedes einzelne entry aus der Datenbank, daher können mehrer Datenzeilen angezeigt werden -->
+            <!-- routerLink="{{user['customIdName']}}" route von jeden einzelnen user; die Komponente muss erst erstellt werden -->
+            <td>{{ user['firstName'] }} {{ user['lastName'] }}</td>
+            <td>{{ user['email'] }}</td>
+            <td>{{user['city']}}</td>
+        </tr>
+    </table>
+</mat-card>
+
+<button (click)="openDialog()" matTooltip="Add user" class="add-user-button" mat-fab color="primary" matTooltipPosition='above'>
+    <mat-icon>add</mat-icon>
+</button>
